@@ -28,6 +28,12 @@ const config = convict({
     env: 'PORT',
     arg: 'port',
   },
+  connectionString: {
+    doc: 'The connection string for the database.',
+    format: String,
+    default: '',
+    env: 'CONNECTION_STRING',
+  },
 })
 
 config.validate({ allowed: 'strict' })

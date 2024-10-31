@@ -3,3 +3,5 @@ services:
     build: .
     image: stream-backend
     container_name: stream-backend
+    environment:
+      CONNECTION_STRING: postgres://postgres:postgres@postgres:5432/users
