@@ -24,15 +24,9 @@ const config = convict({
   port: {
     doc: 'The port to bind.',
     format: 'port',
-    default: 3000,
+    default: 3001,
     env: 'PORT',
     arg: 'port',
-  },
-  appName: {
-    doc: 'The name of the application.',
-    format: String,
-    default: 'Hapi Template',
-    env: 'APP_NAME',
   },
 })
 

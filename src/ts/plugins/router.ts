@@ -1,6 +1,5 @@
 import { Server, ServerRoute } from '@hapi/hapi'
-import home from '../routes/home.js'
-import assets from '../routes/assets.js'
+import stream from '../routes/stream.js'
 import health from '../routes/health.js'
 
 const plugin: any = {
@@ -8,8 +7,7 @@ const plugin: any = {
     name: 'router',
     register: (server: Server) => {
       server.route(new Array<ServerRoute>().concat(
-        home,
-        assets,
+        stream,
         health
       ))
     },

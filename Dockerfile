@@ -1,7 +1,7 @@
 # Development
 FROM node:20-alpine AS development
 ENV NODE_ENV=development
-ARG PORT=3000
+ARG PORT=3001
 ENV PORT=${PORT}
 EXPOSE ${PORT} 9229
 
@@ -18,8 +18,6 @@ WORKDIR /home/node
 COPY --chown=node:node package*.json ./
 RUN npm install
 COPY --chown=node:node . .
-
-RUN npm run build
 
 CMD [ "npm", "run", "start:watch" ]
 
