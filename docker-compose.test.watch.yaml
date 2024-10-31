@@ -1,8 +1,8 @@
 services:
-  hapi-template-ts:
+  stream-backend:
     extends:
       file: docker-compose.test.yaml
-      service: hapi-template-ts
+      service: stream-backend
     command: npm run test:watch
     volumes:
       - ./.git:/home/node/.git

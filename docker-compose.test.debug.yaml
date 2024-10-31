@@ -1,8 +1,8 @@
 services:
-  hapi-template-ts:
+  stream-backend:
     extends:
       file: docker-compose.test.watch.yaml
-      service: hapi-template-ts
+      service: stream-backend
     command: npm run test:debug
     ports:
       - "9229:9229"

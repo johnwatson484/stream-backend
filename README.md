@@ -1,5 +1,4 @@
-# Hapi Template (TypeScript)
-Quick start new Node.js project using Hapi.js and TypeScript.
+# Stream Backend
 
 ## Prerequisites
 

@@ -1,6 +1,6 @@
 services:
-  hapi-template-ts:
+  stream-backend:
     extends:
       file: docker-compose.override.yaml
-      service: hapi-template-ts
+      service: stream-backend
     command: npm run start:debug
