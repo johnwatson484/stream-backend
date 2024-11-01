@@ -10,6 +10,13 @@ const routes: ServerRoute[] = [{
   },
 }, {
   method: 'GET',
+  path: '/stream/postgres/stream',
+  handler: async (_request: Request, h: ResponseToolkit): Promise<ResponseObject> => {
+    const users: User[] = await getUsers()
+    return h.response({ data: users })
+  },
+}, {
+  method: 'GET',
   path: '/stream/csv',
   handler: (_request: Request, h: ResponseToolkit): ResponseObject => {
     return h.response('ok')
