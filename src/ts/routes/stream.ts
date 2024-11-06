@@ -18,7 +18,7 @@ const routes: ServerRoute[] = [{
       async read (_size) {
         const users: User[] = await getUsersByPage(page)
         if (users.length === 0) {
-          this.push(null) // End the stream
+          this.push(null)
         }
         this.push(JSON.stringify({ data: users }))
         page++
@@ -36,7 +36,7 @@ const routes: ServerRoute[] = [{
       async read (_size) {
         const users: User[] = await getUsersByPage(page)
         if (users.length === 0) {
-          this.push(null) // End the stream
+          this.push(null)
         }
         const csvData: string = users.map((row: any) => {
           return `${Object.values(row).map(value => {
