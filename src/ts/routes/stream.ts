@@ -13,12 +13,13 @@ const routes: ServerRoute[] = [{
   method: 'GET',
   path: '/postgres/stream',
   handler: async (_request: Request, h: ResponseToolkit): Promise<ResponseObject> => {
-    let page = 1
+    let page: number = 1
     const stream: Readable = new Readable({
       async read (_size) {
         const users: User[] = await getUsersByPage(page)
         if (users.length === 0) {
           this.push(null)
+          return
         }
         this.push(JSON.stringify({ data: users }))
         page++
@@ -37,6 +38,7 @@ const routes: ServerRoute[] = [{
         const users: User[] = await getUsersByPage(page)
         if (users.length === 0) {
           this.push(null)
+          return
         }
         const csvData: string = users.map((row: any) => {
           return `${Object.values(row).map(value => {
