@@ -31,9 +31,9 @@ const routes: ServerRoute[] = [{
   method: 'GET',
   path: '/csv/stream',
   handler: async (_request: Request, h: ResponseToolkit): Promise<ResponseObject> => {
-    let page = 1
+    let page: number = 1
     const stream: Readable = new Readable({
-      async read (_size) {
+      async read (_size: number | undefined) : Promise<void> {
         const users: User[] = await getUsersByPage(page)
         if (users.length === 0) {
           this.push(null)
